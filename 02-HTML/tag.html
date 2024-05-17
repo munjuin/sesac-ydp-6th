@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tag 종류</title>
+</head>
+<body>
+  
+  <h1>H1</h1>
+  <h2>H2</h2>
+  <h3>H3</h3>
+  <h4>H4</h4>
+  <h5>H5</h5>
+  <h6>H6</h6>
+  <h7>H7</h7>
+  <!-- h7은 존재하지 않는 태그 -->
+  <!-- 지금보니 h7은 inline 요소임 -->
+
+  <p>본문영영임</p>
+  <br>
+  <p>본문영영임</p>
+  
+  <h3>오늘의 할일</h3>
+  <ul type="dot">
+    <!-- ul type attribute disc(default), none, square, circle -->
+    <li>HTML 복습하기</li>
+    <li>운동하기</li>
+    <li>git 명령어 복습하기</li>
+  </ul>
+
+  <h3>아이스 카페라떼 레시피</h3>
+    <ol type="1" start="2">
+      <!-- type a A i I 1, start="시작하고 싶은 숫자", reversed -->
+      <!-- 똑같이 보이지만 스크린리더에서는 다르게 받아들인다 -->
+      <li><strong>유유를</strong> <em>180</em></li>
+      <li><b>얼음</b></li>
+      <li><i>에스프레소</i></li>
+      <li><u>완성</u></li>
+      <li><del>맛있게</del></li>
+      <li><s>드세요</s></li>
+    </ol>
+
+    <!-- 수평줄 태그 -->
+    <hr>
+
+    <!-- 중첩 -->
+    <h3>내가 좋아하는 음식</h3>
+    <ul>
+      <li>
+        양식
+        <ul>
+          <li>스파게티</li>
+          <li>스테이크</li>
+        </ul>
+      </li>
+      <li>
+        한식
+        <ul>
+          <li>김치찌개</li>
+          <li>국밥</li>
+        </ul>
+      </li>
+      <li>
+        일식
+        <ul>
+          <li>사시미</li>
+          <li>라멘</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h1>스타벅스</h1>
+    <ul>
+      <strong>아메리카노</strong  >
+      <ol>R: 3000won</ol>
+      <ol>L: 35000won</ol>
+    </ul>
+    <ul>
+      <b>카페라떼</b>
+      <ol>R: 3000won</ol>
+      <ol>L: 3000won</ol>
+    </ul>
+    <ul>
+      <b>딸기주스</b>
+      <ol>R: 3000won</ol>
+      <ol>L: 3000won</ol>
+    </ul>
+    <ul>
+      <b>레모네이드</b>
+      <ol>R: 3000won</ol>
+      <ol>L: 3000won</ol>
+    </ul>
+    <hr>
+    <h2>음료설명</h2>
+    <div>
+      <p>아메리카노는 <b>물</b>에 에스프레소 샷을 탄 음료입니다.</p>
+      <p>카페라떼는 <b>우유</b>에 에스프레소 샷을 탄 음료입니다.</p>
+      <p>유기농 딸기를 넣고 만든 <b>생과일</b> 주스입니다.</p>
+      <p>레몬 착즙 주스와 <b>탄산수</b>를 이용해 만든 톡 쏘는 탄산음료입니다.</p>
+    </div>
+
+    <hr>
+
+    <h2>img 태그</h2>
+    <!-- 상대경로 라고 한다 상대경로는 ./ 생략가능 -->
+    <!-- 상대결로는 현재위치를 기준으로 하는 파일경로 -->
+    <!-- 프로젝트의 위치가 바뀌어도 그대로 사용할 수 있다 -->
+    <!-- 이미지 태그는 인라인 요소임 -->
+    <img src="./img/images.png" alt="새싹이미지" width="100px">
+    <img src="img/images.png" alt="새싹이미지" width="100px">
+
+    <br>
+
+    <!-- 절대경로는 root(맨 처음, 최상단)부터 해당 파일까지의 경로 -->
+    <!-- 내 로컬 환경에서는 어느 곳에서든 접근 가능하다는 것이 장점임 -->
+    <!-- 다른 로컬에서는 절대경로가 실제로 동일해야만 접근이 가능하다는 것이 단점 -->
+    <!-- https:\\naver.com C:\Users\SBA\Documents.... -->
+    <!-- liveserver에서 이미지 안뜨는 이유는 실제 경로와 다르기 떄문이다 -->
+    <!-- http://127.0.0.1:5500/tag.html file:///C:/Users/SBA/Documents/github/sesac-ydp-6th/lecture/02-HTML/tag.html -->
+    <!-- localhost = 127.0.0.1 -->
+    <img src="C:\Users\SBA\Documents\github\sesac-ydp-6th\lecture\02-HTML\img\images.png" alt="새싹이미지">
+
+    <hr>
+
+    <!-- target attribute는 링크가 열릴 위치 지정 -->
+    <!-- _self (default) 현재 탭에서 열기-->
+    <!-- _blank 새 탭에서 열기 -->
+    <a href="https://naver.com" target="_self">네이버1</a>
+    <a href="https://naver.com" target="_blank">네이버2</a>
+    <a href="https://naver.com" target="_blank" title="마우스를 올리면 나타나는 제목">네이버3</a>
+
+    <!-- a 태그의 href속성 값으로는 인터넷 상의 주소 뿐 아니라 프로젝트 폴더 내의 다른 HTML문서의 주소를 넣을수도 있음 -->
+    <a href="./html-start.html">HTML Link</a>
+  </body>
+</html>
