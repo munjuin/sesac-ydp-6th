@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form과 Form 요소</title>
+</head>
+<body>
+  
+  <h1>폼 관련 태그를 알아보자!</h1>
+
+  <form>
+    <!-- form 태그 -->
+    <!-- form요소 : 폼 태그 안에 있는 사용자의 입력값을 받는 요소 -->
+    <!-- form은 화면에 드러나지 않는 추상적인 태그(양식) -->
+
+    <!-- input -->
+  
+    text<input type="text"><br>
+
+    <input type="text" disabled><br>
+    <!-- <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text"> -->
+
+    <!-- input:email 이런식으로 emmet사용 가능 -->
+    <input type="datetime-local" name="" id="">
+
+    <h5>당신의 취미는 무엇인가요?</h5>
+    <input type="checkbox"name="interest" id="" value="basketball">농구
+    <input type="checkbox"name="interest" id="" value="movie">영화
+    <input type="checkbox"name="interest" id="" value="lay-down">누워있기
+
+    <h5>당신의 성별은 무엇인가요?</h5>
+    <label for="male">남자</label>
+    <input type="radio" name="gender" id="male" value="male">
+    <label for="female">여자</label>
+    <input type="radio" name="gender" id="female" value="female">
+
+    <h5>당신은 무슨 개발자인가요?</h5>
+    <input type="radio" value="f" id="web" /><label
+      for="web"
+      >웹 개발자</label
+    >
+    <input type="radio" value="m" id="app" /><label
+      for="web"
+      >앱 개발자</label
+    >
+      <br>
+    <!-- textarea -->
+    <textarea placeholder="문의사항을 입력해주세요." cols="30px" rows="18px"></textarea>
+
+    <br>
+
+    <select name="" id="">
+      <optgroup label="redflower">
+        <option value="장미">장미</option>
+        <option value="동백꽃" selected>동백꽃</option>
+        <option value="카네이션">카네이션</option>
+      </optgroup>
+      <optgroup label="redflower">
+        <option value="장미">장미</option>
+        <option value="동백꽃" selected>동백꽃</option>
+        <option value="카네이션">카네이션</option>
+      </optgroup>
+    </select>
+  </form>
+
+  <input type="button" value="단순 버튼1">
+  <button type="button">단순 버튼2</button>
+  <br>
+  <input type="button" value="제출">
+  <button type="submit">제출</button>
+
+</body>
+</html>
