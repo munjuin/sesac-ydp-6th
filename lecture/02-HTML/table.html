@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table tag</title>
+</head>
+<body>
+  <h1>테이블 태그를 배워보자!</h1>
+
+  <table width="150" height="150" border="1px">
+    <!-- 색깔이 다른 이유는 역할이 다르기 때문 스타일은 CSS로 하는게 좋다 -->
+    <caption>My First Table</caption>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+
+    <table border="1" cellpadding="15" cellspacing="10" align="center">
+      <caption>메뉴판</caption>
+      <tr>
+        <!-- <th>는 제목태그라서 bold체로 나타난다 -->
+        <th>메뉴</th>
+        <th>가격</th>
+        <th>비고</th>
+      </tr>
+      <tr>
+        <td>국물떡볶이</td>
+        <td>5000</td>
+        <td>2인 이상 주문 가능</td>
+      </tr>
+      <tr>
+        <td>참치김밥</td>
+        <td>4000</td>
+        <td>X</td>
+      </tr>
+      <tr>
+        <td>치즈김밥</td>
+        <td>4000</td>
+        <td>치즈 추가 500원</td>
+      </tr>
+    </table>
+
+    <table border="1" cellspacing="0">
+      <caption>메뉴판</caption>
+      <tr>
+        <th>메뉴</th>
+        <th>가격</th>
+        <th>비고</th>
+      </tr>
+      <tr>
+        <td>국물떡볶이</td>
+        <td>5000</td>
+        <td>2인 이상 주문 가능</td>
+      </tr>
+      <tr>
+        <td>참치김밥</td>
+        <td rowspan="2">4000</td>
+        <!-- 2개의 row를 합치겠습니다 -->
+        <td>X</td>
+      </tr>
+      <tr>
+        <td>치즈김밥</td>
+        <!-- <td>4000</td> -->
+        <td>신메뉴</td>
+      </tr>
+      <tr>
+        <td colspan="3">순대 (품절)</td>
+        <!-- 3개의 column을 함치겠습니다 -->
+      </tr>
+    </table>
+
+</body>
+</html>
