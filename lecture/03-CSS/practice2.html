@@ -1,0 +1,67 @@
+CSS 선택자 종합 실습
+form 만들기
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자 종합실습</title>
+    <style>
+      form {
+        width: 400px;
+      }
+
+      /* focus */
+      textarea {
+        width: 100%;
+      }
+      /* checked */
+      /* active */
+      button {
+        float: right;
+        padding: 5px 15px;
+        background-color: #f96666;
+        color: white;
+        font-size: 17px;
+        border-radius: 10px;
+        border: none;
+      }
+      .title:hover {
+        background-color: black;
+        color: white  ;
+      }
+      .btn:active {
+        background-color: gray;
+        color: red;
+      }
+      .red:checked + label {
+        background-color: red;
+        color: white;
+      }
+      .blue:checked + label {
+        background-color: blue;
+        color: white;
+      }
+      .yellow:checked + label {
+        background-color: yellow;
+        color: black;
+      }
+      textarea:focus {
+        background-color: pink;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h3 class="title">건의 사항을 적어주세요!</h3>
+    <form>
+      <textarea name="" id="" placeholder="건의사항" cols="" rows="10px"></textarea>
+      <div>
+        <input type="checkbox" name="" id="red" class="red"><label for="red" >빨강</label>
+        <input type="checkbox" name="" id="blue" class="blue"><label for="blue" >파랑</label>
+        <input type="checkbox" name="" id="yellow" class="yellow"><label for="yellow" >노랑</label>
+      </div>
+      <button class="btn">제출</button>
+    </form>
+  </body>
+</html>
