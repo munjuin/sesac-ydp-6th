@@ -1,0 +1,31 @@
+/* 
+하위 선택자
+  띄어쓰기로 구분
+자식 선택자
+  > 부등호로 구분
+인접 형제 선택자
+  +를 사용해 구분 함
+일반 형제 선택자
+  ~를 사용해 구분함
+*/
+
+body section {
+  border: 1px solid blue;
+}
+body section h2 {
+  border: 1px solid green;
+}
+.first > h2 {
+  color: white;
+  background-color: navy;
+}
+.second >h2 {
+  color: navy;
+  background-color: white;
+}
+#lion + li {
+  background-color: aqua;
+}
+#lion ~ li {
+  color: red;
+}

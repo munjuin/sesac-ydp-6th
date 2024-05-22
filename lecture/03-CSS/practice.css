@@ -1,0 +1,62 @@
+/* * {
+  color: white;
+  background-color: gray;
+}
+span {
+  background-color: red;
+}
+#first {
+  background-color: blue;
+}
+.second {
+  background-color: green;
+} */
+
+/* .zoo ~ .lion {
+  background-color: red;
+}
+.zoo ul .lion {
+  background-color: greenyellow;
+}
+#tiger {
+  background-color: yellow;
+}
+.lion {
+  color: sienna;
+}
+.zoo .lion {
+  font-weight: bold;
+}
+#tiger + li {
+  background-color: skyblue;
+}
+.zoo li.lion ~ li {
+  background-color: orange;
+} */
+
+/* h1:hover {
+  color: red;
+}
+a:active {
+  background-color: blue;
+}
+input:focus {
+  background-color: orange;
+} */
+
+.stripes * {
+  background-color: navy;
+  color: white;
+}
+.stripes :nth-child(2) {
+  background-color: yellow;
+  color: black;
+}
+.stripes :nth-child(6) {
+  background-color: yellow;
+  color: black;
+}
+.stripes :nth-child(10) {
+  background-color: yellow;
+  color: black;
+}

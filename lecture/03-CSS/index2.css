@@ -1,0 +1,35 @@
+/* 
+전체 선택자
+  * {}  
+
+태그 선택자
+  태그명 {} 
+
+클래스 선택자
+  .클래스명 {}
+
+아이디 선택자
+  #아이디명 {}
+*/
+
+* {
+  color: brown;
+}
+p {
+  background-color: aquamarine;
+}
+.second {
+  background-color: gray;
+}
+.small {
+  font-size: 10px;
+}
+.big {
+  font-size: 30px;
+}
+#first {
+  background-color: lightblue;
+}
+.mouse {
+  font-size: 5px;
+}
