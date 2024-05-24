@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  gap: 20px;
+}
+.box {
+  width: 200px;
+  height: 100px;
+  border-color: red;
+  border: 10px solid black;
+  background-color: cornflowerblue;
+  padding: 20px;
+}
+.content-box {
+  box-sizing: content-box;
+  /* width:260px */
+  /* height: 160px; */
+}
+.border-box {
+  box-sizing: border-box;
+  /* width: 200px; */
+  /* height: 100px; */
+  /* 지정된 너비와 높이 내에서 패딩과 테두리를 포함 하므로 실제로 콘텐츠가 차지할 수 있는 공간이 작아진다 */
+  /* 장단점 */
+  /*  */
+}
