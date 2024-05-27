@@ -89,4 +89,8 @@ img:hover {
   /* transform, transition을 바탕으로 간단한 애니메이션 구현은 하고 복잡한 애니메이션 구현은 javascript를 구현 할것 */
   /* 단 CSS을 사용한 애니메이션과, javascript를 사용한 애니메이션의 차이를 확실히 알고 사용해야 한다  */
 
+  transition-duration: ;
+  transition-property: ;
+  transition-timing-function: ;
+  transition-delay:   ;
 }
