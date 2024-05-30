@@ -1,6 +1,16 @@
+let age = prompt();
+function 연령대확인 (){
+  if (age >= 20){
+    return '성인';
+  }else if (age >= 17){
+    return "고등학생";
+  }else if (age >= 14){
+    return "중학생";
+  }else if (age >= 8){
+    return "초등학생";
+  }else if (age >= 0){
+    return "유아";
+  }
 
-// const korean = [['가', '나', '다'],['라','마','바'],['사','아','자']];
-
-// console.log(korean[0][0] + korean[2][2]);
-// console.log(`${korean[2][0]}${korean[0][2]}`);
-
+}
+console.log(연령대확인());
