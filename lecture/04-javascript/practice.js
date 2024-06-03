@@ -92,3 +92,31 @@
 //     console.log(cnt);
 //   }
 // }
+// let arr = [];
+// let sum = 0;
+//   for (let i = 1; i <= 100; i++){
+//     arr.push(i);
+//   }
+  
+//   for (let i = 0; i < 100; i++){
+//     sum = sum + arr[i];
+//   }
+//   sum = 0;
+//   for (let value of arr){
+//     sum = sum + value;
+//   }
+//   sum = 0;
+//   arr.forEach((val)=>{
+//     sum = sum + val;
+//   });
+
+// let fruits1 = ['사과','딸기','파인애플','수박','참외','오렌지','자두','망고'] ;
+// let fruits2 = ['수박','사과','참외','오렌지','파인애플','망고'] ;
+
+// let same = fruits1.filter((x) => {
+//   return fruits2.includes(x);
+// });
+
+// let diff = fruits1.filter((x)=>{
+//   return !fruits2.includes(x);
+// })
