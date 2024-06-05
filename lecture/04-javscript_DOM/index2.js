@@ -83,3 +83,5 @@ console.log(Math.floor(Math.random() * 100) + 1) // 1 <= x < 101
 // Q2) 20 ~ 22
 console.log(Math.floor(Math.random() * 3) + 20) // 20 <= x < 23 
 
+let a = new Math();
+console.log(a);
