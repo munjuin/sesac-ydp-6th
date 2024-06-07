@@ -95,6 +95,7 @@ todoForm.addEventListener('submit', (e) => {
   console.log('submit');
   e.preventDefault(); // 폼 submit 이벤트가 새로고침 되는 걸 막음.
   // 폼 제출을 막음.
+  // 다른 이벤트 객체 찾아볼 것
 
   const todoInput = document.querySelector('input[name="todo"]')
   // console.log(todoInput.value); // 입력된 값
