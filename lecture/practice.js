@@ -170,18 +170,43 @@
 
 // execute();
 
-setTimeout(function(){
-  document.body.style.backgroundColor = 'red';
-  setTimeout(function(){
-    document.body.style.backgroundColor = 'orange';
-    setTimeout(function(){
-      document.body.style.backgroundColor = 'yello';
-      setTimeout(function(){
-        document.body.style.backgroundColor = 'green';
-        setTimeout(function(){
-          document.body.style.backgroundColor = 'blue';
-        }, 1000)
-      }, 1000)
-    }, 1000)
-  }, 1000)
-}, 1000)
+// setTimeout(function(){
+//   document.body.style.backgroundColor = 'red';
+//   setTimeout(function(){
+//     document.body.style.backgroundColor = 'orange';
+//     setTimeout(function(){
+//       document.body.style.backgroundColor = 'yello';
+//       setTimeout(function(){
+//         document.body.style.backgroundColor = 'green';
+//         setTimeout(function(){
+//           document.body.style.backgroundColor = 'blue';
+//         }, 1000)
+//       }, 1000)
+//     }, 1000)
+//   }, 1000)
+// }, 1000)
+
+function delay(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+delay(1000)
+  .then(() => {
+      document.body.style.backgroundColor = 'red';
+      return delay(1000);
+  })
+  .then(() => {
+      document.body.style.backgroundColor = 'orange';
+      return delay(1000);
+  })
+  .then(() => {
+      document.body.style.backgroundColor = 'yellow';
+      return delay(1000);
+  })
+  .then(() => {
+      document.body.style.backgroundColor = 'green';
+      return delay(1000);
+  })
+  .then(() => {
+      document.body.style.backgroundColor = 'blue';
+  });
