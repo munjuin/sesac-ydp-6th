@@ -64,56 +64,124 @@
 
 // console.log(s);
 
-const word1 = "abc";
-const word2 = "xyz";
+// const word1 = "abc";
+// const word2 = "xyz";
 
-const add = [...word1, ...word2];
-console.log(add);
+// const add = [...word1, ...word2];
+// console.log(add);
 
-class Shape {
-  constructor(가로, 세로){
-    this.가로 = 가로;
-    this.세로 = 세로;
-  }
-  getArea(){
-    return this.가로 * this.세로
-  }
-}
+// class Shape {
+//   constructor(가로, 세로){
+//     this.가로 = 가로;
+//     this.세로 = 세로;
+//   }
+//   getArea(){
+//     return this.가로 * this.세로
+//   }
+// }
 
-let rec1 = new Shape(3,4);
-console.log(rec1.getArea());
+// let rec1 = new Shape(3,4);
+// console.log(rec1.getArea());
 
-class Rectangle extends Shape {
-  constructor(가로, 세로){
-    super(가로, 세로);
-  }
-  대각선(params1, params2){
-    return Math.sqrt(params1**2 + params2**2);
-  }
-}
-const 사각형 = new Rectangle();
-console.log(사각형.대각선(3, 4));
+// class Rectangle extends Shape {
+//   constructor(가로, 세로){
+//     super(가로, 세로);
+//   }
+//   대각선(params1, params2){
+//     return Math.sqrt(params1**2 + params2**2);
+//   }
+// }
+// const 사각형 = new Rectangle();
+// console.log(사각형.대각선(3, 4));
 
-class Triangle extends Shape {
-  constructor(가로, 세로){
-    super(가로, 세로);
-  }
-  getArea (params1, params2){
-    return params1 * params2 / 2;
-  }
-}
-const 삼각형 = new Triangle();
-console.log(삼각형.getArea(3,4));
+// class Triangle extends Shape {
+//   constructor(가로, 세로){
+//     super(가로, 세로);
+//   }
+//   getArea (params1, params2){
+//     return params1 * params2 / 2;
+//   }
+// }
+// const 삼각형 = new Triangle();
+// console.log(삼각형.getArea(3,4));
 
-class Circle extends Shape{
-  constructor(가로, 세로, 원주각){
-    super(가로, 세로);
-    this.원주각 = 원주각;
-  }
-  getArea (params1, params2){
-    return (params1 / 2) ** 2 * params2;
-  }
+// class Circle extends Shape{
+//   constructor(가로, 세로, 원주각){
+//     super(가로, 세로);
+//     this.원주각 = 원주각;
+//   }
+//   getArea (params1, params2){
+//     return (params1 / 2) ** 2 * params2;
+//   }
 
-}
-const 원 = new Circle();
-console.log(원.getArea(4, Math.PI));
+// }
+// const 원 = new Circle();
+// console.log(원.getArea(4, Math.PI));
+
+// function call(name) {
+//   return new Promise((resolve) => {
+//       setTimeout(() => {
+//           console.log(name);
+//           resolve(name);
+//       }, 1000);
+//   });
+// }
+
+// function back() {
+//   return new Promise((resolve) => {
+//       setTimeout(() => {
+//           console.log('back');
+//           resolve('back');
+//       }, 1000);
+//   });
+// }
+
+// function hell() {
+//   return new Promise((resolve) => {
+//       setTimeout(() => {
+//           resolve('callback hell');
+//       }, 1000);
+//   });
+// }
+
+// call('kim')
+//   .then((name) => {
+//       console.log(name + '반가워');
+//       return back();
+//   })
+//   .then((txt) => {
+//       console.log(txt + '을 실행했구나');
+//       return hell();
+//   })
+//   .then((message) => {
+//       console.log('여기는 ' + message);
+//   });
+
+//   async function execute() {
+//     const name = await call('kim');
+//     console.log(name + '반가워');
+
+//     const txt = await back();
+//     console.log(txt + '을 실행했구나');
+
+//     const message = await hell();
+//     console.log('여기는 ' + message);
+// }
+
+// execute();
+
+setTimeout(function(){
+  document.body.style.backgroundColor = 'red';
+  setTimeout(function(){
+    document.body.style.backgroundColor = 'orange';
+    setTimeout(function(){
+      document.body.style.backgroundColor = 'yello';
+      setTimeout(function(){
+        document.body.style.backgroundColor = 'green';
+        setTimeout(function(){
+          document.body.style.backgroundColor = 'blue';
+        }, 1000)
+      }, 1000)
+    }, 1000)
+  }, 1000)
+}, 1000)
