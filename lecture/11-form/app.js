@@ -44,3 +44,29 @@ app.post('/postForm', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Start server!!! http://localhost:${PORT}`);
 })
+
+
+// const express = require('express');
+// const app = express();
+
+// app.set('view engine', 'ejs');
+// app.set('views', './views');
+
+// app.use(express.urlencoded({ extended : true }));
+// app.use(express.json());
+
+// app.get('/', (req, res)=>{
+//     res.render('index', { title : 'POST 요청' });
+// })
+
+// app.post('/post1', (req, res)=>{
+//     res.render('result', {
+//         title : 'post 응답',
+//         info : req.body,
+//     })
+// })
+
+
+// app.listen(8080, ()=>{
+//     console.log('http://localhost:8080 서버 실행 중');
+// })
