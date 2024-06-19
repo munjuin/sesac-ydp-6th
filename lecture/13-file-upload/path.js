@@ -1,3 +1,4 @@
+// path 내장 모듈
 const path = require('path');
 
 const ext = path.extname('hello.txt'); // extname: 확장자를 추출해주는 메서드

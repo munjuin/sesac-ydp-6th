@@ -10,6 +10,8 @@ app.set('views', './views');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use('/static', 
+    express.static(__dirname + '/public'));
 app.use('/uploads', express.static(__dirname + '/uploads'));
 // const upload = multer({
 //     dest: 'uploads/',
@@ -33,20 +35,18 @@ const uploadDetail = multer({
 app.post("/upload", uploadDetail.single('userfile'), (req, res) => {
     console.log(req.body); // { title: '바탕화면 사진임' }
     console.log(req.file); // 업로드된 파일 정보
-    console.log(req.file.path); // 업로드된 파일 정보
     // {
     //     fieldname: 'userfile',
     //     originalname: '6ì\x9B\x94 ì\x9B\x94í\x8E\x98ì\x9D´í\x8D¼.png',
     //     encoding: '7bit',
     //     mimetype: 'image/png',
     //     destination: 'uploads/',
-    //     filename: '9a4440e4b1c09a6271a1027abdd64030',
-    //     path: 'uploads\\9a4440e4b1c09a6271a1027abdd64030',
+    //     filename: '9a4440e4b1c09a6271a1027abdd64030',  path: 'uploads\\9a4440e4b1c09a6271a1027abdd64030',
     //     size: 3358858
     //   }
 
     // res.send('Success upload!');
-    res.render('uploaded.ejs', { title : req.body.title, src : req.file.path });
+    res.render('uploaded', { title: req.body.title, src: req.file.path });
 
     // 파일 탐색기 > uploads 폴더가 생성!
     // 확장자 없이 파일명이 자동으로 저장됨 (multer 객체를 생성할 때 dest 옵션 외에 설정을 한 게 없어서)
@@ -68,6 +68,11 @@ app.post('/upload/fields', uploadDetail.fields([{ name: 'kiwi' }, { name: 'orang
 
     res.send('Success Upload!! (multiple2)');
 });
+
+// 동적 폼 업로드
+app.post('/dynamicFile', uploadDetail.single('thumbnail'), (req, res) => {
+    res.send(req.file);
+})
 
 app.get('/', function (req, res) {
     res.render('index', { title: '파일 업로드를 배워보자!!!' });
