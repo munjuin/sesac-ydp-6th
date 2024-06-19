@@ -18,7 +18,7 @@ app.post('/ajax', (req, res)=>{
   console.log(req.body);
   res.send(req.body);
 })
-
+  
 app.get('/axios', (req, res)=>{
   console.log(req.query);
   res.send(req.query)
