@@ -17,8 +17,8 @@ app.use('/user', userRouter);
 //선언 순서가 중요 함
 app.get('*', (req, res)=>{
     res.render('404');
-})
+});
 
 app.listen(PORT, ()=> {
     console.log(`http://localhost:${PORT}`);
-});
+}); 
