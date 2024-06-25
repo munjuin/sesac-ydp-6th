@@ -1,5 +1,5 @@
 {
-  "name": "13-file-upload",
+  "name": "mvc",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -8,11 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^4.19.2",
-    "multer": "^1.4.4"
-  },
-  "devDependencies": {},
-  "description": ""
+    "express": "^4.19.2"
+  }
 }
