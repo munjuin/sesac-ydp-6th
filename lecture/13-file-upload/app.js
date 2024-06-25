@@ -16,19 +16,6 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 // const upload = multer({
 //     dest: 'uploads/',
 // });
-// const uploadDetail = multer({
-//     storage: multer.diskStorage({
-//         destination(req, file, done) {
-//             done(null, 'uploads/'); // 파일을 저장할 경로
-//         },
-//         filename(req, file, done) {
-//             const ext = path.extname(file.originalname);
-//             done(null, path.basename(file.originalname, ext) + Date.now() + ext); // 저장할 파일명
-//         }
-//     }),
-//     limits: { fileSize: 5 * 1024 * 1024 } // 업로드 크기 제한
-// })
-
 const uploadDetail = multer({
     storage: multer.diskStorage({
         destination(req, file, done) {
@@ -36,13 +23,11 @@ const uploadDetail = multer({
         },
         filename(req, file, done) {
             const ext = path.extname(file.originalname);
-            done(null, path.basename(req.body.id, ext) + ext); // 저장할 파일명
+            done(null, path.basename(file.originalname, ext) + Date.now() + ext); // 저장할 파일명
         }
     }),
     limits: { fileSize: 5 * 1024 * 1024 } // 업로드 크기 제한
 })
-
-
 
 // multer객체.single(): 하나의 파일을 업로드
 // - single 미들웨어는 라우터 미들웨어 앞에 넣으면 됨
@@ -56,8 +41,7 @@ app.post("/upload", uploadDetail.single('userfile'), (req, res) => {
     //     encoding: '7bit',
     //     mimetype: 'image/png',
     //     destination: 'uploads/',
-    //     filename: '9a4440e4b1c09a6271a1027abdd64030', 
-    //     path: 'uploads\\9a4440e4b1c09a6271a1027abdd64030',
+    //     filename: '9a4440e4b1c09a6271a1027abdd64030',  path: 'uploads\\9a4440e4b1c09a6271a1027abdd64030',
     //     size: 3358858
     //   }
 
@@ -85,18 +69,9 @@ app.post('/upload/fields', uploadDetail.fields([{ name: 'kiwi' }, { name: 'orang
     res.send('Success Upload!! (multiple2)');
 });
 
-
-
 // 동적 폼 업로드
 app.post('/dynamicFile', uploadDetail.single('thumbnail'), (req, res) => {
     res.send(req.file);
-})
-
-
-
-app.post('/practice', uploadDetail.single('practice'), (req, res) => {
-    res.render('practice', { id : req.body.id, pw : req.body.pw, name : req.body.name, age : req.body.age, url: req.file.path });
-    
 })
 
 app.get('/', function (req, res) {
@@ -106,3 +81,4 @@ app.get('/', function (req, res) {
 app.listen(PORT, function () {
     console.log(`http://localhost:${PORT}`);
 });
+  
