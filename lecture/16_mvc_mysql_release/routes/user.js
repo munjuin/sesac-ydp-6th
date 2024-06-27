@@ -20,7 +20,7 @@ router.get('/user/signin', controller.getSignin);
 router.post('/user/signin', controller.postSignin);
 
 // //로그인 성공시 회원 정보 수정 페이지 접속
-router.post('/user/profile', controller.postProfile);
+router.post('/user/profile', controller.postProfilePage)
 
 // //회원정보수정
 router.patch('/user/profile/edit', controller.patchProfileEdit);

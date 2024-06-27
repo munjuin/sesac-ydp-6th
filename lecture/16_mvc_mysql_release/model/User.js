@@ -29,11 +29,12 @@ exports.postSignin = (data, callback)=>{
   conn.query(query, (err, rows)=>{
     if(err){
       throw err;
-    } else {
-      callback(rows[0]);
     }
+      callback(rows[0]);
+    
   })
 };
+
 //회원정보수정
 exports.postSignin = (data, callback)=>{
   conn.query(`update user set userid = '${data.id}', name = '${data.name}', pw = '${data.pw}'`, (err, rows)=>{

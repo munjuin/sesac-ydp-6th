@@ -14,21 +14,24 @@ exports.postSignup = (req, res)=>{
     res.send({ id : result });
   });
 };
+//로그인 회원 조회
+exports.postSignin = (req, res)=>{
+  User.postSignin(req.body, (result)=>{
+    res.send({ data : result });
+  })
+};
 //로그인페이지
 exports.getSignin = (req, res)=>{
   res.render('signin');
 };
-//로그인 회원 조회
-exports.postSignin = (req, res)=>{
+
+ //로그인 성공
+exports.postProfilePage = (req, res)=>{
   User.postSignin(req.body, (result)=>{
-    res.send({ data : result});
+    res.render('profile', { result });
   })
 };
- //로그인 성공시 회원 정보 수정 페이지 접속\
-exports.postProfile = (req, res)=>{
-  res.render('profile');
-};
-//회원정보수정
+//회원정보수정 
 exports.patchProfileEdit = (req, res)=>{
   User.patchProfileEdit(req.body, (result)=>{
     res.send({ data : result });
