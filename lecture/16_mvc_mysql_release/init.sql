@@ -12,6 +12,7 @@ DROP TABLE IF EXISTS user;
 
 -- TODO: user 데이터베이스 생성
 create table user(
+
 	id int primary key auto_increment,
     userid varchar(20) not null,
     name varchar(10) not null,
