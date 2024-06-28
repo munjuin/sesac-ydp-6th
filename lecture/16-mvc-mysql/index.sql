@@ -1,5 +1,5 @@
 show databases;
-
+DROP TABLE visitor;
 use codingon;
 
 create table visitor (
@@ -27,5 +27,8 @@ alter user 'user'@'%' identified with mysql_native_password by '1234'; -- 인증
 select * from mysql.user; -- 계정 생성 확인
 
 
+desc player;
+desc profile;
+desc team;
 
 
