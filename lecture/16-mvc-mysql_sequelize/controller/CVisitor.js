@@ -1,66 +1,95 @@
-const Visitor = require('../model/Visitor');
+const { Visitor } = require('../model/index');
 
-// (1) GET / => localhost:PORT/
+// 메인 페이지
 exports.main = (req, res) => {
-  res.render('index');
+    res.render('index');
 };
 
-// (2) GET /visitors => localhost:PORT/visitors
-exports.getVisitors = (req, res) => {
-  // console.log(Visitor.getVisitors); // [Function (anonymous)]
-
-  // [before]
-  // res.render('visitor', { data: Visitor.getVisitors() });
-
-  // [after]
-  Visitor.getVisitors((result) => {
-    // result 매개변수
-    // : model/Visitor.js getVisitors함수의 callback(rows)의 "rows" 변수에 대응
-  
-    console.log('controller/CVisitor.js >> ', result);
-
-    res.render('visitor', { data: result });
-  })
+// 방명록 목록 조회
+exports.getVisitors = async (req, res) => {
+    try {
+        const getVisitors = await Visitor.findAll()
+        console.log(getVisitors);
+        res.render('visitor', { data : getVisitors });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error')
+    }
 };
 
-exports.getVisitor = (req, res) => {
-  // req.params.id: // 조회해야할 id
-  Visitor.getVisitor(req.params.id, (result) => {
-    res.send(result);
-  }); 
+// 방명록 조회
+exports.getVisitor = async (req, res) => {
+    try {
+        const { id } = req.params
+        const getVisitor = await Visitor.findOne({
+            where: {
+                id
+            }
+        })
+        // res.json(getVisitor)
+        res.send(getVisitor)
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error')
+    }
 }
 
-exports.postVisitor = (req, res) => {
-  console.log(req.body);
+// 방명록 추가
+exports.postVisitor = async (req, res) => {
+    try {
+        console.log(req.body);
+        const { name, comment } = req.body
+        const newVisitor = await Visitor.create({    // 테이블에 명시된 컬럼 순서 그대로
+            name, comment
+        })
 
-  Visitor.postVisitor(req.body, (result) => {
-    // result: rows.insertId
-    console.log('controller/CVisitor.js >> ', result);
-    // controller/CVisitor.js >>  4
-
-    res.send({id: result, 
-      name: req.body.name, 
-      comment: req.body.comment})
-  });
+        res.send(newVisitor )
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error')
+    }
 }
 
-exports.deleteVisitor = (req, res) => {
-  console.log(req.body);
+// 방명록 삭제
+exports.deleteVisitor = async (req, res) => {
+    try {
+        const { id } = req.body
+        const isDeleted = await Visitor.destroy({
+            where: {
+                id
+            }
+        })
+        console.log('isdeleted', isDeleted);   // return 값이 true(1)/false(0)
 
-  Visitor.deleteVisitor(req.body.id, (result) => {
-    console.log('controller/CVisitor.js >> ', result);
-    
-    res.send({ result }); // { result: result }
-  })
+        if (isDeleted) {
+            return res.send(true)   // delete cascade 설정으로 profile 에 데이터도 삭제
+        } else {
+            return res.send(false)
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error')
+    }
 }
 
-
-exports.patchVisitor = (req, res) => {
-  console.log(req.body);
-
-  Visitor.patchVisitor(req.body, (result) => {
-    console.log('controller/CVisitor.js >> ', result);
-
-    res.send({ result }); // { result: result }
-  })
+// 방명록 수정
+exports.patchVisitor = async (req, res) => {
+    try {
+        const { id, name, comment } = req.body
+        const updateVisitor = await Visitor.update(
+            { name, comment },   // 업데이트할 컬럼, team_id : team_id
+            {
+                where: {  // 조건
+                    id 
+                }
+            }
+        )
+        console.log('updatevisitor', updateVisitor[0]);
+        if (updateVisitor[0]) return res.send({ isUpdated: true, name, comment })
+        else return res.send(false)
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error')
+    }
 }
+

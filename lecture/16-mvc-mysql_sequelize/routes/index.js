@@ -2,26 +2,25 @@ const express = require('express');
 const controller = require('../controller/CVisitor');
 const router = express.Router();
 
-// 작업 순서
-// read all -> create -> delte -> read one -> update
+// 작업 순서 : read all -> create -> delete -> update
 
 // GET / => localhost:PORT/
 router.get('/', controller.main);
 
 // GET /visitors => localhost:PORT/visitors
-router.get('/visitors', controller.getVisitors); // 전체 조회
+router.get('/visitors', controller.getVisitors); // 리스트 조회
 
 // GET /visitor/:id
-router.get('/visitor/:id', controller.getVisitor); // 하나 조회
+router.get('/visitor/:id', controller.getVisitor)   // 조회, req.params 사용
+// router.get('/visitor', controller.getVisitor)   // 조회, req.query
 
-// POST /visitor 
-router.post('/visitor', controller.postVisitor); // 하나 추가
+// POST /visitor => localhost:PORT/visitor
+router.post('/visitor', controller.postVisitor); // 추가
 
-// DELETE /visitor
-router.delete('/visitor', controller.deleteVisitor); // 하나 삭제
+// DELETE /visitor 
+router.delete('/visitor', controller.deleteVisitor)  // 삭제
 
-// PATCH /visitor
-router.patch('/visitor', controller.patchVisitor); // 하나 수정
+// PARCH /visitor
+router.patch("/visitor", controller.patchVisitor)   // 수정
 
 module.exports = router;
-
