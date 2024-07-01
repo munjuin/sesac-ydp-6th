@@ -21,14 +21,13 @@ app.use(session({
     resave: false,
     // 세션을 초기값이 지정되지 않은 상태에서도 처음부터 세션을 생성할 건지 
     saveUninitialized: false,
-
-    //세션 쿠키 설정(세션관리할 때 클라이언트로 보내는 쿠키)
+    
+    // 세션 쿠키 설정 (세션관리할 때 클라이언트로 보내는 쿠키)
     cookie: {
-      httpOnly: true,//
-      secure: false,
-      maxAge: 60 * 1000, 
-      //expires 둘다 설정 가능 ex.특정시간에는 세션을 다 만료 시켜야만 하는 경우
-      
+        httpOnly: true, // 클라이언트에서 쿠키 확인 x
+        secure: false, // http에서 사용 가능하도록 (true라면 https에서만 가능)
+        maxAge: 60 * 1000, // 단위 (ms)
+        // expires: 만료기간 설정
     }
 }))
 // 인자로 세션에 대한 설정 객체를 넣음
@@ -90,3 +89,8 @@ app.listen(port, () => {
 // : 세션 관리
 // ex. 로그인 등 세션을 구현하거나 특정 클라이언트에 대한 데이터를 저장할 때 사용
 // -> 사용자 별로 req.session 객체 안에 유지
+
+// 세션!
+// 1. 세션 사용: req.session.키
+// 2. 세션 설정: req.session.키 = 값
+// 3. 세션 삭제: req.destroy(콜백)
