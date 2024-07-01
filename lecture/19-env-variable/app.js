@@ -23,4 +23,4 @@ const dbPw = process.env.DATABASE_PW;
 app.listen(port, () => {
     console.log(`Sever is running! The port number is ${port} ...`);
     console.log(`Database(${dbName}) is connected! The password is ${dbPw}`);
-})
+});
