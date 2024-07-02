@@ -82,12 +82,12 @@
 
       const myModal = new bootstrap.Modal('#exampleModal');
       // console.log(myModal); // _element: div#exampleModal.modal.fade
-      console.log('popup >> ', '');
       // checkbox.checked === true (체크시); ''
       // checkbox.checked === false (미체크시); 'hide'
-
+      
       // popup 쿠키 값이 ''이라면, 모달 보여주기
-      if ('' === '') {
+      const popup = '<%= popup %>';
+      if (popup === '') {
         myModal.show();
       }
 
@@ -107,6 +107,8 @@
         // js로 모달 닫기 수행
         myModal.hide();
       }
+
+
     </script>
   </body>
 </html>

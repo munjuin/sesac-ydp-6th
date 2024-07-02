@@ -17,7 +17,7 @@ app.set('views', './views');
 app.use(cookieParser(process.env.COOKIE_SECRET));
 const cookieConfig = {
     httpOnly: true,//웹서버를 통해서만 쿠키에 접근 가능 -> 프론트엔드 자바스크립트파일에서 document.cookie로 접근 차단함
-    matAge: 60 * 1000,//쿠키 수명(단위: ms), //expires: 만료 날짜/시간 지정 가능
+    maxAge: 60 * 1000,//쿠키 수명(단위: ms), //expires: 만료 날짜/시간 지정 가능
     signed: true,// 쿠키의 암호화(req.signedCookies)
     //secure: 웹 브라우저와 웹 서버가 HTTPS 통신하는 경우만 쿠키를 서버에 전송
 }

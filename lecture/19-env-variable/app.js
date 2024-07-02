@@ -1,10 +1,10 @@
 // const ps = process.env;
 // console.log(ps); // 객체
 
-const express = require('express');
+const express = require('express');//express 라이브러리 사용을 위해서 express 외부 모듈을 불러옴
 const path = require('path');
 const dotenv = require('dotenv');
-const app = express();
+const app = express();//express 함수를 호출하는 
 
 
 // dotenv 모듈을 이용해서 .env 파일의 환경 변수를 불러옴
