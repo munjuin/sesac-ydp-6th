@@ -124,7 +124,6 @@ app.get('/destroy', (req, res) => {
 });
 
 
-
 //express 애플리케이션 서버를 특정 포트에서 실행
 app.listen(port, ()=>{
   console.log(`http://localhost:${port} 에서 서버 실행 중`);
