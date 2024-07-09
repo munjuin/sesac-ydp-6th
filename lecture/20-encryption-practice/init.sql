@@ -10,7 +10,7 @@ SHOW tables;
 -- 이미 user 테이블이 있다면 기존 테이블 지움
 DROP TABLE IF EXISTS user;
 
---  user 데이터베이스 생성
+-- user 테이블 생성
 create table user(
 
 	id int primary key auto_increment,
@@ -18,10 +18,9 @@ create table user(
     name varchar(10) not null,
     pw varchar(20) not null
     
-    
 );
 
--- user 데이블 데이터 추가
+-- user 테이블 데이터 추가
 INSERT INTO user (userid, name, pw) VALUES ('sean', 'sean', '1234');
 INSERT INTO user (userid, name, pw) VALUES ('test', 'test', '1234');
 INSERT INTO user (userid, name, pw) VALUES ('apple', 'apple', '1234');
