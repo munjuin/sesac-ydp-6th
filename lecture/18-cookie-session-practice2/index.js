@@ -42,3 +42,8 @@ app.get('*', (req, res) =>{
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
 });
+
+
+
+var xhr = new XMLHttpRequest(); var url = 'http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2&nation=대한민국'); /*URL*/ var queryParams = '?' + encodeURIComponent('ServiceKey=
+7UQ2Y40GBL8PYJ16YGU0'; /*Service Key*/ queryParams += '&' + encodeURIComponent('val001') + '=' + encodeURIComponent('2018')); /*상영년도*/ queryParams += '&' + encodeURIComponent('val002') + '=' + encodeURIComponent('01')); /*상영월*/ xhr.open('GET', url + queryParams); xhr.onreadystatechange = function () { if (this.readyState == 4) { alert('Status: '+this.status+'Headers: '+JSON.stringify(this.getAllResponseHeaders())+'Body: '+this.responseText); } }; xhr.send('');
