@@ -28,7 +28,7 @@
 
 ///////////////////////////////////////////
 // async/await
-// await: 기다리다 
+// await: 기다리다
 // - 성공/실패로 프로미스 객체의 실행이 완료되기를 기다림
 // - await 뒤에는 프로미스가 오게 됨
 // - **async 키워드를 사용한 함수 안에서만 await를 사용 가능
@@ -45,7 +45,7 @@
 //     });
 // }
 
-// i) promise then() 
+// i) promise then()
 // fetchFruits()
 //     .then(function (f) {
 //         console.log(f);
@@ -54,12 +54,11 @@
 //         console.log(err);
 //     });
 
-
 // ii) async/await
 // async/await 에서는 예외 처리를 try-catch 구문으로 하게 됨!
 // async function printItems() {
 //     try {
-//         const fruits = await fetchFruits(); // [ '🥝', '🍇', '🍋' ] 
+//         const fruits = await fetchFruits(); // [ '🥝', '🍇', '🍋' ]
 //         // const fruits = fetchFruits(); // Promise { <pending> }
 //         console.log(fruits)
 //     } catch(err) {
@@ -73,42 +72,42 @@ let product;
 let price;
 
 function goMart() {
-    console.log('마트에 가서 어떤 음료를 살지 고민한다..');
+  console.log("마트에 가서 어떤 음료를 살지 고민한다..");
 }
 
 function pickDrink() {
-    return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-            console.log('고민 끝');
-            product = '제로 콜라';
-            price = 6000;
-            // resolve();
-            if (price <= 3000) {
-                resolve();
-            } else {
-                reject();
-            }
-        }, 3000);
-    });
+  return new Promise(function (resolve, reject) {
+    setTimeout(function () {
+      console.log("고민 끝");
+      product = "제로 콜라";
+      price = 6000;
+      // resolve();
+      if (price <= 3000) {
+        resolve();
+      } else {
+        reject();
+      }
+    }, 3000);
+  });
 }
 
 function pay() {
-    console.log(`상품명: ${product} // 가격: ${price}`);
+  console.log(`상품명: ${product} // 가격: ${price}`);
 }
 
 function nopay() {
-    console.log('금액 부족ㅜㅜ');
-    }
+  console.log("금액 부족ㅜㅜ");
+}
 
 async function exec() {
-    try {
-        // 장점) 함수의 실행 순서가 명확히 보인다!!
-        goMart();
-        await pickDrink(); // 시간이 걸리는 pickDrink() 함수의 작업을 await 키워드로 인해 기다려줌
-        pay();
-    } catch (err) {
-        nopay();
-    }
+  try {
+    // 장점) 함수의 실행 순서가 명확히 보인다!!
+    goMart();
+    await pickDrink(); // 시간이 걸리는 pickDrink() 함수의 작업을 await 키워드로 인해 기다려줌
+    pay();
+  } catch (err) {
+    nopay();
+  }
 }
 
 exec();

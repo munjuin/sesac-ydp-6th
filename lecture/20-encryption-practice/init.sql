@@ -8,7 +8,7 @@ USE codingon;
 SHOW tables;
 
 -- 이미 user 테이블이 있다면 기존 테이블 지움
-DROP TABLE IF EXISTS user;
+DROP TABLE member;
 
 -- user 테이블 생성
 create table user(
@@ -31,3 +31,7 @@ DESC user;
 
 -- user 테이블 데이터 조회
 SELECT * FROM user;
+ 
+select * from member;
+
+select * from movie;
