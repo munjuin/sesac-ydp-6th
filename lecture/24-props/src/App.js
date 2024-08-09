@@ -2,7 +2,7 @@ import "./App.css";
 import ClassComponent from "./ClassComponent";
 import FunctionComponent from "./FunctionComponent";
 import Button from "./Button";
-import Food from "./food";
+import Food from "./Food";
 import Book from "./Book";
 
 function App() {

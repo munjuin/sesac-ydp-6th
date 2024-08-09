@@ -1,6 +1,5 @@
 const Book = (props) => {
   const url = "../public/logo192.png";
-  const { title, author, price, type } = props;
   return (
     <>
       <h1>이번주 베스트셀러</h1>
