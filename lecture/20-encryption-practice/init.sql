@@ -7,31 +7,40 @@ USE codingon;
 -- codingon 데이터베이스의 테이블 목록 확인
 SHOW tables;
 
--- 이미 user 테이블이 있다면 기존 테이블 지움
-DROP TABLE member;
+-- 이미 todo 테이블이 있다면 기존 테이블 지움
+DROP TABLE if exists todo;
 
--- user 테이블 생성
-create table user(
+-- todo 테이블 생성
+create table todo(
 
-	id int primary key auto_increment,
-    userid varchar(20) not null,
-    name varchar(10) not null,
-    pw varchar(20) not null
-    
+	id int not null primary key auto_increment,
+    title varchar(20) not null,
+    done boolean not null default false
 );
 
--- user 테이블 데이터 추가
-INSERT INTO user (userid, name, pw) VALUES ('sean', 'sean', '1234');
-INSERT INTO user (userid, name, pw) VALUES ('test', 'test', '1234');
-INSERT INTO user (userid, name, pw) VALUES ('apple', 'apple', '1234');
-INSERT INTO user (userid, name, pw) VALUES ('hello', 'hello', '1234');
 
--- user 테이블 구조 보기
-DESC user; 
 
--- user 테이블 데이터 조회
-SELECT * FROM user;
- 
-select * from member;
+-- todo 테이블 데이터 추가
+INSERT INTO todo values (null, 'my todo1', 0);
+INSERT INTO todo values (null, 'my todo2', 0);
+INSERT INTO todo values (null, 'my todo3', 0);
+INSERT INTO todo values (null, 'my todo4', 1);
+INSERT INTO todo values (null, 'my todo5', 1);
+INSERT INTO todo values (null, 'my todo6', 1);
 
-select * from movie;
+-- todo 테이블 구조 보기
+DESC todo; 
+
+-- todo 테이블 보기
+select * from todo;
+
+update todo set title = '내가 할일 2번' where id = 2;
+
+delete from todo where id = 3;
+
+select * from mysql.user;
+
+create user 'user'@'%' identified by '1234';
+create user 'user'@'%' identified by With mysql_native_password by '1234';
+
+grant all privileges on *.* to 'user'@'%' with grant option;
