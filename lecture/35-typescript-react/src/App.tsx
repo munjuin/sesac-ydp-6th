@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
 import Student from './components/Student';
 import Card from './components/Card';
+import TodoList from './components/TodoList';
 
 function App() {
   // #1. 
@@ -11,12 +11,13 @@ function App() {
   }
   return (
     <div className="App">
-      <Student name='새싹' grade={3} handleClick={handleClick}/>
+      {/* <Student name='새싹' grade={3} handleClick={handleClick}/>
       <hr />
       
       <Card title='오늘 배울 것은?'>
         <p>TypeScript with React</p>
-      </Card>
+      </Card> */}
+      <TodoList/>
     </div>
   );
 }
